@@ -252,8 +252,23 @@ The repo in Dockerhub is setup with automated builds on tags:
 
 ### Test Docker Iamge locally
 
-  docker build -t tfswitch:local .
-  docker -it --rm -v path/to/terraform/repo:/app tfswitch:local
+```sh
+docker build -t tfswitch:local .
+docker -it --rm -v path/to/terraform/repo:/terraform tfswitch:local
+```
+
+You can `cd` to your terraform dir and then run:
+
+```sh
+docker run -it --entrypoint sh --rm -v $PWD:/terraform 
+```
+
+Then in the container:
+
+```sh
+cd terraform
+tfswitch
+```
 
 ### Jenkins setup
 

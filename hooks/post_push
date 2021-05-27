@@ -3,4 +3,4 @@
 docker tag $IMAGE_NAME $DOCKER_REPO:$SOURCE_COMMIT
 docker push $DOCKER_REPO:$SOURCE_COMMIT
 docker tag $IMAGE_NAME $DOCKER_REPO:latest
-docker push $DOCKER_REPO:laetst
+docker push $DOCKER_REPO:latest

@@ -254,6 +254,7 @@ The repo in Dockerhub is setup with automated builds on tags:
 
 ```sh
 docker build -t tfswitch:local .
+docker run --rm tfswitch:local -l
 docker -it --rm -v path/to/terraform/repo:/terraform tfswitch:local
 ```
 

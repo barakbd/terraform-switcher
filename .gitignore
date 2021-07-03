@@ -35,3 +35,7 @@ tfswitch*
 build-script.sh
 
 !hooks/*
+
+# examples/terraform
+.terraform
+.terraform.lock.hcl

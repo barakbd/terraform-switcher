@@ -55,11 +55,11 @@ func getInstallLocation() string {
 	/* get current user */
 	usr, errCurr := user.Current()
 	if errCurr != nil {
-		log.Fatal(errCurr)
+		installLocation = installPath
+	} else {
+		/* set installation location */
+		installLocation = usr.HomeDir + installPath
 	}
-
-	/* set installation location */
-	installLocation = usr.HomeDir + installPath
 
 	/* Create local installation directory if it does not exist */
 	CreateDirIfNotExist(installLocation)

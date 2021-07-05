@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+
+    tfswitch:
+        image: tfswitch:scratch
+        build: .
+
+        entrypoint: ["/tfswitch"]
+        # command: ["-b", "/bin"]
+        # command: ["-b", "/bin", "&&", "/bin/terraform", "-v"]
+        command: ["-b", "/bin", "&&", "/.terraform.versions/terraform_0.13.7", "fmt", "--check"]
+        # entrypoint: ["/go/bin/tfswitch"]
+        # command: []
+        # command: ["/ls"]
+        # command: ["-alh", "/terraform"]
+        # command: ["echo", "hi"]
+        # command: ["/ls", "-alh"]
+        # command: [ "cd", "terraform", "&&", "/tfswitch", "-u"]
+  
+        volumes:
+          - type: bind
+            source: ./examples/terraform-v0.13.0
+            target: /terraform
